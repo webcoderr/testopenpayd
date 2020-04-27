@@ -1,0 +1,52 @@
+.photo-grid {
+  padding: 0px 50px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+}
+
+.photo-grid i {
+  padding: 20px;
+  position: relative;
+  bottom: 50px;
+  cursor: pointer;
+}
+
+.photo-grid .slide-img {
+  padding: 5px;
+}
+
+.main-grid{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-grid section {
+  padding-top: 20px;
+}
+
+.main-grid .photo-nav {
+  display: flex;
+}
+
+.photo-nav h3 {
+  padding-left: 15px;
+}
+
+.photo-nav i {
+  cursor: pointer;
+}
+
+.main-grid section mat-card{
+  width: 400px;
+  margin: auto;
+}
+
+.main-img{
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+}

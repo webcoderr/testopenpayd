@@ -1,0 +1,42 @@
+<ng-container *ngIf="launchDetails$ | async as launchDetails">
+  <div class="main-grid">
+    <section>
+      <span class="photo-nav">
+        <i [routerLink]="['/']" class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+        <h3>{{ launchDetails.mission_name }}</h3>
+      </span>
+      <mat-card>
+        <img
+          height="256"
+          width="256"
+          mat-card-image
+          [src]="launchDetails.links.mission_patch"
+          alt="Mission patch of {{ launchDetails.mission_name }}"
+        />
+        <mat-card-content>
+          <p>{{ launchDetails.details }}</p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <section class="photo-grid">
+      <img
+        class="main-img"
+        height="300"
+        width="300"
+        [src]="launchDetails.links.flickr_images[imageIndex]"
+      />
+      <i (click)="slideImage(imageIndex,'back')" class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+      <img
+        *ngFor="let pic of launchDetails.links.flickr_images | slice:0:3; let i = index;"
+        (click)="changeImage(i)"
+        class="slide-img"
+        [src]="pic"
+        alt="Picture of {{ launchDetails.mission_name }}"
+        height="150"
+        width="150"
+        loading="lazy"
+      />
+      <i (click)="slideImage(imageIndex,'forward')" class="fa fa-angle-right fa-3x" aria-hidden="true"></i>
+    </section>
+  </div>
+</ng-container>
